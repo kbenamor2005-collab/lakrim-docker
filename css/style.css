@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+/* ===== TYPOGRAPHIE SOBRE ===== */
+h1, h2, h3 {
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+}
+
+.section-sous-titre {
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* ===== MENU DE NAVIGATION ===== */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(255, 255, 255, 0.98);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #1a1a1a;
+}
+
+.logo span {
+    font-weight: 600;
+    color: #c6a43b;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 400;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #c6a43b;
+}
+
+/* ===== SECTION ACCUEIL ===== */
+.accueil {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1600');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.texte {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.sous-titre {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    color: #c6a43b;
+    font-weight: 300;
+}
+
+.texte h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.texte h1 span {
+    font-weight: 600;
+    color: #c6a43b;
+}
+
+.description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.bouton {
+    background: transparent;
+    color: white;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border: 1px solid #c6a43b;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+.bouton:hover {
+    background: #c6a43b;
+    border-color: #c6a43b;
+    color: #1a1a1a;
+}
+
+/* ===== SECTION VOITURES ===== */
+.voitures {
+    padding: 6rem 5%;
+    background: #ffffff;
+}
+
+.grille {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.carte {
+    background: #ffffff;
+    text-align: center;
+    transition: all 0.4s ease;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+}
+
+.carte:hover {
+    transform: translateY(-5px);
+    border-bottom-color: #c6a43b;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 220px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #333;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s;
+}
+
+.carte:hover .image-placeholder {
+    background: #e8e8e8;
+}
+
+.carte h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    letter-spacing: -0.3px;
+}
+
+.carte p {
+    color: #666;
+    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+.prix {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #c6a43b;
+    margin-bottom: 1.2rem;
+}
+
+.prix span {
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: #999;
+}
+
+.btn {
+    background: transparent;
+    color: #1a1a1a;
+    border: 1px solid #ddd;
+    padding: 0.6rem 1.8rem;
+    border-radius: 0;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #c6a43b;
+    border-color: #c6a43b;
+    color: white;
+}
+
+/* ===== SECTION CONTACT ===== */
+.contact {
+    padding: 6rem 5%;
+    background: #fafafa;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: #666;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.details p {
+    margin: 0.8rem 0;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    background: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #c6a43b;
+}
+
+.contact-form button {
+    width: 200px;
+    margin-top: 0.5rem;
+}
+
+/* ===== PIED DE PAGE ===== */
+footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.footer-logo {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.footer-logo span {
+    color: #c6a43b;
+    font-weight: 600;
+}
+
+footer p {
+    opacity: 0.6;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin: 0.5rem 0;
+}
+
+.copyright {
+    margin-top: 1.5rem;
+    opacity: 0.4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        gap: 1.5rem;
+    }
+    
+    .texte h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info h2 {
+        text-align: center;
+    }
+    
+    .grille {
+        grid-template-columns: 1fr;
+    }
+}
