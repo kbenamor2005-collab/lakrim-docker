@@ -1,0 +1,60 @@
+﻿name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Vérifier la présence des fichiers HTML
+      run: |
+        if [ ! -f "html/index.html" ]; then
+          echo "❌ html/index.html manquant"
+          exit 1
+        fi
+        echo "✅ html/index.html présent"
+    
+    - name: Vérifier la présence des fichiers CSS
+      run: |
+        if [ ! -f "css/style.css" ]; then
+          echo "❌ css/style.css manquant"
+          exit 1
+        fi
+        echo "✅ css/style.css présent"
+    
+    - name: Vérifier la présence des fichiers JS
+      run: |
+        if [ ! -f "js/script.js" ]; then
+          echo "❌ js/script.js manquant"
+          exit 1
+        fi
+        echo "✅ js/script.js présent"
+    
+    - name: Vérifier la présence du Dockerfile
+      run: |
+        if [ ! -f "Dockerfile" ]; then
+          echo "❌ Dockerfile manquant"
+          exit 1
+        fi
+        echo "✅ Dockerfile présent"
+
+  build:
+    runs-on: ubuntu-latest
+    needs: test
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: |
+        docker build -t lakrim-luxury-cars:latest .
+        echo "✅ Image Docker construite avec succès"
